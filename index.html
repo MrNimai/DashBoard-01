@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BankDash Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* ================================
+           GLOBAL
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+
+        /* ================================
+           SIDEBAR
+        ================================= */
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            background: #ffffff;
+            border-right: 1px solid #eeeeee;
+
+            padding-top: 30px;
+        }
+
+
+        /* Logo */
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding-left: 20px;
+            margin-bottom: 32px;
+
+            color: #1d2a5b;
+        }
+
+        .sidebar-logo i {
+            font-size: 20px;
+            color: #3155e7;
+        }
+
+        .sidebar-logo span {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+
+        /* Navigation */
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* Nav Item */
+
+        .nav-item {
+            position: relative;
+
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 0 22px;
+
+            color: #aaaaaa;
+
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 400;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-item i {
+            width: 18px;
+
+            text-align: center;
+
+            font-size: 14px;
+        }
+
+
+        /* Hover */
+
+        .nav-item:hover {
+            color: #3155e7;
+            background: #f7f9ff;
+        }
+
+
+        /* Active */
+
+        .nav-item.active {
+            color: #3155e7;
+
+            font-weight: 500;
+
+            background: #ffffff;
+        }
+
+        .nav-item.active::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 46px;
+
+            background: #3155e7;
+
+            border-radius: 0 4px 4px 0;
+        }
+
+        .nav-item.active i {
+            color: #3155e7;
+        }
+
+
+
+        /* ================================
+           TOP NAVBAR
+        ================================= */
+
+        .top-navbar {
+            height: 70px;
+
+            width: calc(100% - 250px);
+
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            z-index: 900;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 28px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+
+        /* Page Title */
+
+        .page-title {
+            margin: 0;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            color: #343c6a;
+        }
+
+
+        /* Right Side */
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        /* Search */
+
+        .search-box {
+            width: 130px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 0 12px;
+
+            border-radius: 50px;
+
+            background: #f5f7fa;
+        }
+
+        .search-box i {
+            flex-shrink: 0;
+
+            font-size: 11px;
+
+            color: #718ebf;
+        }
+
+        .search-box input {
+            width: 100%;
+            min-width: 0;
+
+            border: none;
+            outline: none;
+
+            background: transparent;
+
+            font-size: 9px;
+
+            color: #718ebf;
+        }
+
+        .search-box input::placeholder {
+            color: #718ebf;
+        }
+
+
+        /* Icon Buttons */
+
+        .nav-icon {
+            width: 38px;
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #f5f7fa;
+
+            color: #718ebf;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .nav-icon:hover {
+            color: #3155e7;
+        }
+
+
+        /* Notification */
+
+        .notification {
+            position: relative;
+        }
+
+        .notification span {
+            position: absolute;
+
+            top: 7px;
+            right: 8px;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #ff4b55;
+        }
+
+
+        /* Profile */
+
+        .profile {
+            width: 38px;
+            height: 38px;
+
+            flex-shrink: 0;
+
+            margin-left: 4px;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+
+        /* ================================
+           MAIN CONTENT
+        ================================= */
+
+        .main-content {
+            width: calc(100% - 250px);
+
+            min-height: 100vh;
+
+            margin-left: 250px;
+
+            padding: 100px 28px 30px;
+
+            overflow-x: hidden;
+
+            background: #f4f7fb;
+        }
+
+
+
+        /* ================================
+           ROW 01
+        ================================= */
+
+        .row-01 {
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            margin: 0;
+        }
+
+
+        /* ================================
+           ROW 01 HEADING
+        ================================= */
+
+        .row-01-heading {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 14px;
+        }
+
+        .row-01-heading div {
+            display: flex;
+            align-items: center;
+        }
+
+        .row-01-heading h3 {
+            margin: 0;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #343f72;
+        }
+
+        .row-01-heading .heading-middle {
+            justify-content: flex-end;
+        }
+
+        .row-01-heading .heading-last {
+            justify-content: flex-start;
+        }
+
+        .see-all {
+            margin-left: 15px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            color: #343f72;
+        }
+
+
+
+        /* ================================
+           CARDS
+        ================================= */
+
+        .card {
+            flex: 1 1 0;
+
+            min-width: 0;
+
+            height: 235px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+        }
+
+
+
+        /* ================================
+           CARD 01
+        ================================= */
+
+        .card-01 {
+            position: relative;
+
+            background: linear-gradient(135deg,
+                    #4b43ee 0%,
+                    #2920ed 100%);
+
+            color: #ffffff;
+        }
+
+
+        /* Card top */
+
+        .card-top {
+            height: 86px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .card-balance p {
+            margin: 0 0 2px;
+
+            font-size: 12px;
+
+            opacity: 0.9;
+        }
+
+        .card-balance span {
+            display: block;
+
+            font-size: 20px;
+            font-weight: 500;
+
+            line-height: 1;
+        }
+
+        .card-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        /* Card info */
+
+        .card-info {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            opacity: 0.75;
+        }
+
+        .card-info span {
+            font-size: 14px;
+        }
+
+
+        /* Card bottom */
+
+        .card-bottom {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+        }
+
+
+        /* Mastercard */
+
+        .mastercard {
+            position: relative;
+
+            width: 50px;
+            height: 35px;
+
+            flex-shrink: 0;
+        }
+
+        .mastercard span {
+            position: absolute;
+
+            top: 4px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .mastercard span:first-child {
+            left: 0;
+        }
+
+        .mastercard span:last-child {
+            right: 0;
+
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+
+
+        /* ================================
+           CARD 02
+        ================================= */
+
+        .card-02 {
+            position: relative;
+
+            background: #ffffff;
+
+            border: 1px solid #dce3ed;
+
+            color: #27345f;
+        }
+
+
+        .mini-card-top {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .mini-card-top p {
+            margin: 0 0 3px;
+
+            font-size: 12px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-top span {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .mini-card-top img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        .mini-card-info {
+            height: 85px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .mini-card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-info span {
+            font-size: 14px;
+        }
+
+
+        .mini-card-bottom {
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 69px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            border-top: 1px solid #dce3ed;
+        }
+
+        .mini-card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+
+        .mini-mastercard {
+            position: relative;
+
+            width: 48px;
+            height: 32px;
+        }
+
+        .mini-mastercard span {
+            position: absolute;
+
+            top: 1px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+        }
+
+        .mini-mastercard span:first-child {
+            left: 0;
+
+            background: #c5ccda;
+        }
+
+        .mini-mastercard span:last-child {
+            right: 0;
+
+            background: #b7c0d1;
+        }
+
+
+
+        /* ================================
+           CARD 03
+        ================================= */
+
+        .card-03 {
+            padding: 18px 25px;
+
+            background: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+
+        .transaction-item {
+            width: 100%;
+
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .transaction-icon {
+            width: 52px;
+            height: 52px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+        }
+
+        .transaction-icon i {
+            font-size: 21px;
+        }
+
+
+        .card-icon-bg {
+            background: #fff2d5;
+            color: #ffad18;
+        }
+
+        .paypal-bg {
+            background: #e8edff;
+            color: #5577ed;
+        }
+
+        .jemi-bg {
+            background: #dffffb;
+            color: #08cfc4;
+        }
+
+
+        .transaction-details {
+            margin-left: 18px;
+
+            flex: 1;
+
+            min-width: 0;
+        }
+
+        .transaction-details h4 {
+            margin: 0 0 5px;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            color: #222222;
+
+            white-space: nowrap;
+        }
+
+        .transaction-details p {
+            margin: 0;
+
+            font-size: 14px;
+
+            color: #7890bd;
+        }
+
+
+        .transaction-amount {
+            margin-left: 10px;
+
+            font-size: 16px;
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+        .transaction-amount.expense {
+            color: #ff3d3d;
+        }
+
+        .transaction-amount.income {
+            color: #12c9a0;
+        }
+
+
+
+        /* ==================================================
+           ROW 02
+        ================================================== */
+
+        .row-02 {
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            margin-top: 28px;
+        }
+
+
+        /* ================================
+           ROW 02 LEFT
+        ================================= */
+
+        .weekly-section {
+            flex: 2 1 0;
+
+            min-width: 0;
+        }
+
+
+        /* ================================
+           ROW 02 RIGHT
+        ================================= */
+
+        .expense-section {
+            flex: 1 1 0;
+
+            min-width: 0;
+          
+        }
+
+
+        /* Row 02 Heading */
+
+        .row-02-heading {
+            height: 40px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .row-02-heading h3 {
+            margin: 0;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #343f72;
+        }
+
+
+        /* ================================
+           WEEKLY ACTIVITY CARD
+        ================================= */
+
+        .activity-card {
+            position: relative;
+
+            width: 100%;
+            height: 322px;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+
+            padding: 35px 30px 20px 70px;
+        }
+
+
+        /* Legend */
+
+        .activity-legend {
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            margin-right: 28px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+        }
+
+        .legend-item p {
+            margin: 0;
+
+            font-size: 14px;
+
+            color: #6e88bf;
+        }
+
+        .deposit-dot,
+        .withdraw-dot {
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+        }
+
+        .deposit-dot {
+            background: #171be9;
+        }
+
+        .withdraw-dot {
+            background: #19c9c1;
+        }
+
+
+        /* Y Axis */
+
+        .y-axis {
+            position: absolute;
+
+            left: 25px;
+            top: 67px;
+
+            height: 185px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .y-axis span {
+            font-size: 13px;
+
+            color: #6383bf;
+        }
+
+
+        /* Chart */
+
+        .bar-chart {
+            position: relative;
+
+            width: 100%;
+            height: 250px;
+
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        /* Grid lines */
+
+        .grid-lines {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            top: 40px;
+
+            height: 185px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid-lines span {
+            width: 100%;
+            height: 1px;
+
+            background: #edf0f5;
+        }
+
+
+        /* Bar group */
+
+        .bar-group {
+            position: relative;
+
+            width: 50px;
+            height: 250px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            z-index: 2;
+        }
+
+        .bars {
+            position: absolute;
+
+            bottom: 35px;
+
+            display: flex;
+            align-items: flex-end;
+
+            gap: 12px;
+
+            height: 185px;
+        }
+
+
+        /* Bar */
+
+        .bar {
+            display: block;
+
+            width: 15px;
+
+            border-radius: 10px 10px 5px 5px;
+        }
+
+        .bar.deposit {
+            background: #171be9;
+        }
+
+        .bar.withdraw {
+            background: #19c9c1;
+        }
+
+
+        /* Day */
+
+        .bar-group p {
+            position: absolute;
+
+            bottom: 0;
+
+            margin: 0;
+
+            font-size: 13px;
+
+            color: #6383bf;
+        }
+
+
+
+        /* ================================
+           EXPENSE STATISTICS
+        ================================= */
+
+        .expense-card {
+            width: 100%;
+            height: 322px;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* Pie Chart */
+
+        .expense-chart {
+            position: relative;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(#363c73 0deg 105deg,
+
+                    #ffffff 105deg 110deg,
+
+                    #ff7600 110deg 162deg,
+
+                    #ffffff 162deg 167deg,
+
+                    #1919ee 167deg 293deg,
+
+                    #ffffff 293deg 298deg,
+
+                    #f000ed 298deg 360deg);
+        }
+
+
+        /* Pie labels */
+
+        .expense-label {
+            position: absolute;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            line-height: 1.2;
+        }
+
+        .expense-label strong {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .expense-label span {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* Entertainment */
+
+        .expense-label.entertainment {
+            top: 55px;
+            left: 58px;
+        }
+
+
+        /* Bill */
+
+        .expense-label.bill {
+            top: 95px;
+            right: 12px;
+        }
+
+
+        /* Others */
+
+        .expense-label.others {
+            bottom: 58px;
+            right: 28px;
+        }
+
+
+        /* Investment */
+
+        .expense-label.investment {
+            bottom: 58px;
+            left: 28px;
+        }
+
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 1200px) {
+
+            .sidebar {
+                width: 220px;
+            }
+
+            .top-navbar {
+                width: calc(100% - 220px);
+            }
+
+            .main-content {
+                width: calc(100% - 220px);
+
+                margin-left: 220px;
+            }
+        }
+
+
+
+        @media (max-width: 1000px) {
+
+            .row-01 {
+                flex-wrap: wrap;
+            }
+
+            .row-01 .card {
+                min-width: calc(50% - 10px);
+            }
+
+            .row-02 {
+                flex-direction: column;
+            }
+
+            .weekly-section,
+            .expense-section {
+                width: 100%;
+            }
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                width: 200px;
+            }
+
+            .top-navbar {
+                width: calc(100% - 200px);
+
+                padding: 0 20px;
+            }
+
+            .main-content {
+                width: calc(100% - 200px);
+
+                margin-left: 200px;
+
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .row-01 {
+                gap: 15px;
+            }
+        }
+
+
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                width: 70px;
+            }
+
+            .sidebar-logo {
+                justify-content: center;
+
+                padding-left: 0;
+            }
+
+            .sidebar-logo span {
+                display: none;
+            }
+
+            .nav-item {
+                justify-content: center;
+
+                padding: 0;
+            }
+
+            .nav-item span {
+                display: none;
+            }
+
+            .nav-item i {
+                width: auto;
+            }
+
+
+            .top-navbar {
+                width: calc(100% - 70px);
+
+                padding: 0 15px;
+            }
+
+            .main-content {
+                width: calc(100% - 70px);
+
+                margin-left: 70px;
+
+                padding: 90px 15px 20px;
+            }
+
+
+            .row-01 {
+                flex-direction: column;
+            }
+
+            .row-01 .card {
+                width: 100%;
+                min-width: 0;
+            }
+
+
+            .row-01-heading {
+                grid-template-columns: 1fr;
+            }
+
+            .row-01-heading .heading-middle,
+            .row-01-heading .heading-last {
+                display: none;
+            }
+
+
+            .row-02 {
+                flex-direction: column;
+            }
+
+
+            .activity-card,
+            .expense-card {
+                height: auto;
+                min-height: 320px;
+            }
+
+
+            .activity-legend {
+                gap: 12px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>BankDash.</span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <span>Transactions</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Accounts</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Investments</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Credit Cards</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span>Loans</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Services</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>My Privileges</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Setting</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         TOP NAVBAR
+    ================================================== -->
+
+    <nav class="top-navbar">
+
+        <h2 class="page-title">
+            Overview
+        </h2>
+
+
+        <div class="nav-right">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Search for something">
+
+            </div>
+
+
+            <button class="nav-icon" type="button">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+
+
+            <button class="nav-icon notification" type="button">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span></span>
+
+            </button>
+
+
+            <div class="profile">
+
+                <img src="https://i.pravatar.cc/100?img=47" alt="Profile">
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             ROW 01 HEADING
+        ================================================== -->
+
+        <div class="row-01-heading">
+
+            <div>
+                <h3>My Cards</h3>
+            </div>
+
+            <div class="heading-middle">
+
+                <span class="see-all">
+                    See All
+                </span>
+
+            </div>
+
+            <div class="heading-last">
+
+                <h3>
+                    Recent Transaction
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ROW 01
+        ================================================== -->
+
+        <div class="row-01">
+
+
+            <!-- =========================
+                 CARD 01
+            ========================== -->
+
+            <div class="card card-01">
+
+                <div class="card-top">
+
+                    <div class="card-balance">
+
+                        <p>
+                            Balance
+                        </p>
+
+                        <span>
+                            $5,756
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-icon">
+
+                        <img src="Chip_Card.png" alt="Card Chip">
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-info">
+
+                    <div>
+
+                        <p>
+                            CARD HOLDER
+                        </p>
+
+                        <span>
+                            Eddy Cusuma
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <p>
+                            VALID THRU
+                        </p>
+
+                        <span>
+                            12/22
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-bottom">
+
+                    <div class="card-number">
+
+                        3778
+                        <span>
+                            **** ****
+                        </span>
+                        1234
+
+                    </div>
+
+
+                    <div class="mastercard">
+
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CARD 02
+            ========================== -->
+
+            <div class="card card-02">
+
+                <div class="mini-card-top">
+
+                    <div>
+
+                        <p>
+                            Balance
+                        </p>
+
+                        <span>
+                            $5,756
+                        </span>
+
+                    </div>
+
+
+                    <img src="Chip_Card (1).png" alt="Card Chip">
+
+                </div>
+
+
+                <div class="mini-card-info">
+
+                    <div>
+
+                        <p>
+                            CARD HOLDER
+                        </p>
+
+                        <span>
+                            Eddy Cusuma
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <p>
+                            VALID THRU
+                        </p>
+
+                        <span>
+                            12/22
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mini-card-bottom">
+
+                    <div class="mini-card-number">
+
+                        3778
+                        <span>
+                            **** ****
+                        </span>
+                        1234
+
+                    </div>
+
+
+                    <div class="mini-mastercard">
+
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CARD 03
+            ========================== -->
+
+            <div class="card card-03">
+
+
+                <!-- Transaction 01 -->
+
+                <div class="transaction-item">
+
+                    <div class="transaction-icon card-icon-bg">
+
+                        <i class="fa-regular fa-credit-card"></i>
+
+                    </div>
+
+
+                    <div class="transaction-details">
+
+                        <h4>
+                            Deposit from my Card
+                        </h4>
+
+                        <p>
+                            28 January 2021
+                        </p>
+
+                    </div>
+
+
+                    <span class="transaction-amount expense">
+                        -$850
+                    </span>
+
+                </div>
+
+
+
+                <!-- Transaction 02 -->
+
+                <div class="transaction-item">
+
+                    <div class="transaction-icon paypal-bg">
+
+                        <i class="fa-brands fa-paypal"></i>
+
+                    </div>
+
+
+                    <div class="transaction-details">
+
+                        <h4>
+                            Deposit Paypal
+                        </h4>
+
+                        <p>
+                            25 January 2021
+                        </p>
+
+                    </div>
+
+
+                    <span class="transaction-amount income">
+                        +$2,500
+                    </span>
+
+                </div>
+
+
+
+                <!-- Transaction 03 -->
+
+                <div class="transaction-item">
+
+                    <div class="transaction-icon jemi-bg">
+
+                        <i class="fa-solid fa-dollar-sign"></i>
+
+                    </div>
+
+
+                    <div class="transaction-details">
+
+                        <h4>
+                            Jemi Wilson
+                        </h4>
+
+                        <p>
+                            21 January 2021
+                        </p>
+
+                    </div>
+
+
+                    <span class="transaction-amount income">
+                        +$5,400
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ROW 02
+        ================================================== -->
+
+        <div class="row-02">
+
+
+            <!-- =================================================
+                 WEEKLY ACTIVITY
+            ================================================== -->
+
+            <section class="weekly-section">
+
+
+                <div class="row-02-heading">
+
+                    <h3>
+                        Weekly Activity
+                    </h3>
+
+
+                    <div class="activity-legend">
+
+                        <div class="legend-item">
+
+                            <span class="deposit-dot"></span>
+
+                            <p>
+                                Deposit
+                            </p>
+
+                        </div>
+
+
+                        <div class="legend-item">
+
+                            <span class="withdraw-dot"></span>
+
+                            <p>
+                                Withdraw
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="activity-card">
+
+
+                    <!-- Y Axis -->
+
+                    <div class="y-axis">
+
+                        <span>500</span>
+                        <span>400</span>
+                        <span>300</span>
+                        <span>200</span>
+                        <span>100</span>
+                        <span>0</span>
+
+                    </div>
+
+
+
+                    <!-- Bar Chart -->
+
+                    <div class="bar-chart">
+
+
+                        <!-- Grid Lines -->
+
+                        <div class="grid-lines">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+
+                        <!-- Saturday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 178px;"></span>
+
+                                <span class="bar withdraw" style="height: 91px;"></span>
+
+                            </div>
+
+                            <p>
+                                Sat
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Sunday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 132px;"></span>
+
+                                <span class="bar withdraw" style="height: 49px;"></span>
+
+                            </div>
+
+                            <p>
+                                Sun
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Monday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 124px;"></span>
+
+                                <span class="bar withdraw" style="height: 101px;"></span>
+
+                            </div>
+
+                            <p>
+                                Mon
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Tuesday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 178px;"></span>
+
+                                <span class="bar withdraw" style="height: 138px;"></span>
+
+                            </div>
+
+                            <p>
+                                Tue
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Wednesday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 56px;"></span>
+
+                                <span class="bar withdraw" style="height: 91px;"></span>
+
+                            </div>
+
+                            <p>
+                                Wed
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Thursday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 147px;"></span>
+
+                                <span class="bar withdraw" style="height: 91px;"></span>
+
+                            </div>
+
+                            <p>
+                                Thu
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Friday -->
+
+                        <div class="bar-group">
+
+                            <div class="bars">
+
+                                <span class="bar deposit" style="height: 148px;"></span>
+
+                                <span class="bar withdraw" style="height: 129px;"></span>
+
+                            </div>
+
+                            <p>
+                                Fri
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EXPENSE STATISTICS
+            ================================================== -->
+
+    <section class="expense-section">
+
+
+            <div class="row-02-heading">
+
+                <h3>
+                    Expense Statistics
+                </h3>
+
+            </div>
+
+
+
+            <div class="expense-card">
+
+
+                <div class="expense-chart">
+
+
+                    <!-- Entertainment -->
+
+                    <div class="expense-label entertainment">
+
+                        <strong>
+                            30%
+                        </strong>
+
+                        <span>
+                            Entertainment
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Bill -->
+
+                    <div class="expense-label bill">
+
+                        <strong>
+                            15%
+                        </strong>
+
+                        <span>
+                            Bill Expense
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Others -->
+
+                    <div class="expense-label others">
+
+                        <strong>
+                            35%
+                        </strong>
+
+                        <span>
+                            Others
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Investment -->
+
+                    <div class="expense-label investment">
+
+                        <strong>
+                            20%
+                        </strong>
+
+                        <span>
+                            Investment
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        </div>
+    
+    </main>
+
+
+
+    <!-- =================================================
+         FONT AWESOME
+    ================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js">
+    </script>
+
+</body>
+
+</html>
