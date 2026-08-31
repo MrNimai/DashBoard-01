@@ -1,0 +1,895 @@
+/* ================================
+   GLOBAL
+================================ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+
+        /* ================================
+           MAIN CONTENT
+        ================================= */
+
+        .main-content {
+            width: calc(100% - 250px);
+
+            min-height: 100vh;
+
+            margin-left: 250px;
+
+            padding: 100px 28px 30px;
+
+            overflow-x: hidden;
+
+            background: #f4f7fb;
+        }
+
+
+
+        /* ================================
+           ROW 01
+        ================================= */
+
+        .row-01 {
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            margin: 0;
+        }
+
+
+        /* ================================
+           ROW 01 HEADING
+        ================================= */
+
+        .row-01-heading {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 14px;
+        }
+
+        .row-01-heading div {
+            display: flex;
+            align-items: center;
+        }
+
+        .row-01-heading h3 {
+            margin: 0;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #343f72;
+        }
+
+        .row-01-heading .heading-middle {
+            justify-content: flex-end;
+        }
+
+        .row-01-heading .heading-last {
+            justify-content: flex-start;
+        }
+
+        .see-all {
+            margin-left: 15px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            color: #343f72;
+        }
+
+
+
+        /* ================================
+           CARDS
+        ================================= */
+
+        .card {
+            flex: 1 1 0;
+
+            min-width: 0;
+
+            height: 235px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+        }
+
+
+
+        /* ================================
+           CARD 01
+        ================================= */
+
+        .card-01 {
+            position: relative;
+
+            background: linear-gradient(135deg,
+                    #4b43ee 0%,
+                    #2920ed 100%);
+
+            color: #ffffff;
+        }
+
+
+        /* Card top */
+
+        .card-top {
+            height: 86px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .card-balance p {
+            margin: 0 0 2px;
+
+            font-size: 12px;
+
+            opacity: 0.9;
+        }
+
+        .card-balance span {
+            display: block;
+
+            font-size: 20px;
+            font-weight: 500;
+
+            line-height: 1;
+        }
+
+        .card-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        /* Card info */
+
+        .card-info {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            opacity: 0.75;
+        }
+
+        .card-info span {
+            font-size: 14px;
+        }
+
+
+        /* Card bottom */
+
+        .card-bottom {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+        }
+
+
+        /* Mastercard */
+
+        .mastercard {
+            position: relative;
+
+            width: 50px;
+            height: 35px;
+
+            flex-shrink: 0;
+        }
+
+        .mastercard span {
+            position: absolute;
+
+            top: 4px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .mastercard span:first-child {
+            left: 0;
+        }
+
+        .mastercard span:last-child {
+            right: 0;
+
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+
+
+        /* ================================
+           CARD 02
+        ================================= */
+
+        .card-02 {
+            position: relative;
+
+            background: #ffffff;
+
+            border: 1px solid #dce3ed;
+
+            color: #27345f;
+        }
+
+
+        .mini-card-top {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .mini-card-top p {
+            margin: 0 0 3px;
+
+            font-size: 12px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-top span {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .mini-card-top img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        .mini-card-info {
+            height: 85px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .mini-card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-info span {
+            font-size: 14px;
+        }
+
+
+        .mini-card-bottom {
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 69px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            border-top: 1px solid #dce3ed;
+        }
+
+        .mini-card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+
+        .mini-mastercard {
+            position: relative;
+
+            width: 48px;
+            height: 32px;
+        }
+
+        .mini-mastercard span {
+            position: absolute;
+
+            top: 1px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+        }
+
+        .mini-mastercard span:first-child {
+            left: 0;
+
+            background: #c5ccda;
+        }
+
+        .mini-mastercard span:last-child {
+            right: 0;
+
+            background: #b7c0d1;
+        }
+
+/* ================================
+   CARD 03
+================================ */
+
+.card-03 {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3ed;
+
+    color: #27345f;
+
+    height: 235px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    padding: 0;
+}
+
+
+/* Chart Top */
+
+.card-03 .mini-card-top {
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 15px 25px 0;
+}
+
+
+/* Chart Value */
+
+.card-03 .chart-value {
+    font-size: 20px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #343f72;
+
+    margin: 0;
+}
+
+
+/* Chart Area */
+
+.card-03 .mini-card-info {
+    width: 100%;
+    height: 180px;
+
+    display: block;
+
+    padding: 0 25px;
+}
+
+
+/* Bar Chart */
+
+.card-03 .bar-chart {
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 14px;
+}
+
+
+/* Bar Item */
+
+.card-03 .bar-item {
+    flex: 1;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* Bar */
+
+.card-03 .bar {
+    width: 100%;
+    max-width: 48px;
+
+    background: #edf0f8;
+
+    border-radius: 15px 15px 12px 12px;
+}
+
+
+/* Active Bar */
+
+.card-03 .bar-item.active .bar {
+    background: #18d2c5;
+}
+
+
+/* Month */
+
+.card-03 .bar-item span {
+    margin-top: 9px;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #6f8fc7;
+
+    line-height: 1;
+}
+
+
+.row-02-heading{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    margin-top: 20px;
+}
+
+
+/* ================================
+   STATUS CARD
+================================ */
+
+.status-card {
+    width: 100%;
+    height: 235px;
+
+    padding: 20px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3ed;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   STATUS CARD HEADER
+================================ */
+
+.status-card-header {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.status-card-header h3 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #343f72;
+}
+
+
+.status-amount {
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #343f72;
+}
+
+
+/* ================================
+   STATUS CHART
+================================ */
+
+.status-chart {
+    width: 100%;
+    height: 150px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: 8px;
+}
+
+
+/* ================================
+   BAR ITEM
+================================ */
+
+.status-bar-item {
+    flex: 1;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* ================================
+   BAR
+================================ */
+
+.status-bar {
+    width: 100%;
+    max-width: 48px;
+
+    background: #edf0f8;
+
+    border-radius: 15px 15px 12px 12px;
+}
+
+
+/* Active Bar */
+
+.status-bar-item.active .status-bar {
+    background: #18d2c5;
+}
+
+
+/* ================================
+   MONTH
+================================ */
+
+.status-bar-item span {
+    margin-top: 8px;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    color: #6f8fc7;
+}
+
+
+/* ================================
+   RECENT TRANSACTIONS
+================================ */
+
+.recent-transactions {
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+.recent-transactions h2 {
+    margin: 0 0 20px;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #343f72;
+}
+
+
+/* ================================
+   TRANSACTION FILTERS
+================================ */
+
+.transaction-filters {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.transaction-filters button {
+    padding: 10px 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #6f8fc7;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.transaction-filters button:hover {
+    color: #343f72;
+
+    border-color: #343f72;
+}
+
+.transaction-filters button.active {
+    color: #ffffff;
+
+    background: #4b43ee;
+
+    border-color: #4b43ee;
+}
+
+
+/* ================================
+   TRANSACTION TABLE
+================================ */
+
+.transaction-table {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3ed;
+    border-radius: 24px;
+
+    overflow: hidden;
+}
+
+.transaction-table table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.transaction-table thead {
+    background: #f8f9fc;
+}
+
+.transaction-table th {
+    padding: 18px 25px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #6f8fc7;
+
+    text-align: left;
+
+    border-bottom: 1px solid #dce3ed;
+}
+
+.transaction-table td {
+    padding: 18px 25px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #343f72;
+
+    border-bottom: 1px solid #edf0f8;
+}
+
+.transaction-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================================
+   TRANSACTION ICON
+================================ */
+
+.transaction-icon {
+    display: inline-flex;
+
+    width: 32px;
+    height: 32px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 12px;
+
+    background: #f8f9fc;
+
+    border-radius: 8px;
+}
+
+.transaction-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ================================
+   AMOUNT
+================================ */
+
+.amount {
+    font-weight: 600;
+}
+
+.amount.income {
+    color: #18d2c5;
+}
+
+.amount.expense {
+    color: #ff4b4b;
+}
+
+
+/* ================================
+   DOWNLOAD BUTTON
+================================ */
+
+.download-btn {
+    padding: 8px 16px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #4b43ee;
+
+    background: transparent;
+
+    border: 1px solid #4b43ee;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    color: #ffffff;
+
+    background: #4b43ee;
+}
+
+
+/* ================================
+   PAGINATION
+================================ */
+
+.pagination {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: flex;
+
+    width: 36px;
+    height: 36px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #6f8fc7;
+
+    background: #ffffff;
+
+    border: 1px solid #dce3ed;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    color: #343f72;
+
+    border-color: #343f72;
+}
+
+.pagination a.active {
+    color: #ffffff;
+
+    background: #4b43ee;
+
+    border-color: #4b43ee;
+}
+
+.pagination .prev,
+.pagination .next {
+    font-size: 18px;
+}

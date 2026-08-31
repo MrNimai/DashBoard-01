@@ -1,0 +1,1006 @@
+/* ================================
+   GLOBAL
+================================ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+
+        /* ================================
+           MAIN CONTENT
+        ================================= */
+
+        .main-content {
+            width: calc(100% - 250px);
+
+            min-height: 100vh;
+
+            margin-left: 250px;
+
+            padding: 100px 28px 30px;
+
+            overflow-x: hidden;
+
+            background: #f4f7fb;
+        }
+
+
+
+        /* ================================
+           ROW 01
+        ================================= */
+
+        .row-01 {
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            margin: 0;
+        }
+
+
+        /* ================================
+           ROW 01 HEADING
+        ================================= */
+
+        .row-01-heading {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 14px;
+        }
+
+        .row-01-heading div {
+            display: flex;
+            align-items: center;
+        }
+
+        .row-01-heading h3 {
+            margin: 0;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #343f72;
+        }
+
+        .row-01-heading .heading-middle {
+            justify-content: flex-end;
+        }
+
+        .row-01-heading .heading-last {
+            justify-content: flex-start;
+        }
+
+        .see-all {
+            margin-left: 15px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            color: #343f72;
+        }
+
+
+
+        /* ================================
+           CARDS
+        ================================= */
+
+        .card {
+            flex: 1 1 0;
+
+            min-width: 0;
+
+            height: 235px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+        }
+
+
+
+        /* ================================
+           CARD 01
+        ================================= */
+
+        .card-01 {
+            position: relative;
+
+            background: linear-gradient(135deg,
+                    #4b43ee 0%,
+                    #2920ed 100%);
+
+            color: #ffffff;
+        }
+
+
+        /* Card top */
+
+        .card-top {
+            height: 86px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .card-balance p {
+            margin: 0 0 2px;
+
+            font-size: 12px;
+
+            opacity: 0.9;
+        }
+
+        .card-balance span {
+            display: block;
+
+            font-size: 20px;
+            font-weight: 500;
+
+            line-height: 1;
+        }
+
+        .card-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        /* Card info */
+
+        .card-info {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            opacity: 0.75;
+        }
+
+        .card-info span {
+            font-size: 14px;
+        }
+
+
+        /* Card bottom */
+
+        .card-bottom {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+        }
+
+
+        /* Mastercard */
+
+        .mastercard {
+            position: relative;
+
+            width: 50px;
+            height: 35px;
+
+            flex-shrink: 0;
+        }
+
+        .mastercard span {
+            position: absolute;
+
+            top: 4px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .mastercard span:first-child {
+            left: 0;
+        }
+
+        .mastercard span:last-child {
+            right: 0;
+
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+
+
+        /* ================================
+           CARD 02
+        ================================= */
+
+        .card-02 {
+            position: relative;
+
+            background: #ffffff;
+
+            border: 1px solid #dce3ed;
+
+            color: #27345f;
+        }
+
+
+        .mini-card-top {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px 0;
+        }
+
+        .mini-card-top p {
+            margin: 0 0 3px;
+
+            font-size: 12px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-top span {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .mini-card-top img {
+            width: 38px;
+            height: auto;
+        }
+
+
+        .mini-card-info {
+            height: 85px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 0 25px;
+        }
+
+        .mini-card-info p {
+            margin: 0 0 4px;
+
+            font-size: 11px;
+
+            color: #6c8ac4;
+        }
+
+        .mini-card-info span {
+            font-size: 14px;
+        }
+
+
+        .mini-card-bottom {
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 69px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            border-top: 1px solid #dce3ed;
+        }
+
+        .mini-card-number {
+            font-size: 20px;
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+
+        .mini-mastercard {
+            position: relative;
+
+            width: 48px;
+            height: 32px;
+        }
+
+        .mini-mastercard span {
+            position: absolute;
+
+            top: 1px;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+        }
+
+        .mini-mastercard span:first-child {
+            left: 0;
+
+            background: #c5ccda;
+        }
+
+        .mini-mastercard span:last-child {
+            right: 0;
+
+            background: #b7c0d1;
+        }
+
+
+
+        /* ================================
+           CARD 03
+        ================================= */
+
+        .card-03 {
+            padding: 18px 25px;
+
+            background: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+
+        .transaction-item {
+            width: 100%;
+
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .transaction-icon {
+            width: 52px;
+            height: 52px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+        }
+
+        .transaction-icon i {
+            font-size: 21px;
+        }
+
+
+        .card-icon-bg {
+            background: #fff2d5;
+            color: #ffad18;
+        }
+
+        .paypal-bg {
+            background: #e8edff;
+            color: #5577ed;
+        }
+
+        .jemi-bg {
+            background: #dffffb;
+            color: #08cfc4;
+        }
+
+
+        .transaction-details {
+            margin-left: 18px;
+
+            flex: 1;
+
+            min-width: 0;
+        }
+
+        .transaction-details h4 {
+            margin: 0 0 5px;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            color: #222222;
+
+            white-space: nowrap;
+        }
+
+        .transaction-details p {
+            margin: 0;
+
+            font-size: 14px;
+
+            color: #7890bd;
+        }
+
+
+        .transaction-amount {
+            margin-left: 10px;
+
+            font-size: 16px;
+            font-weight: 500;
+
+            white-space: nowrap;
+        }
+
+        .transaction-amount.expense {
+            color: #ff3d3d;
+        }
+
+        .transaction-amount.income {
+            color: #12c9a0;
+        }
+
+
+
+        /* ==================================================
+           ROW 02
+        ================================================== */
+
+        .row-02 {
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 20px;
+
+            margin-top: 28px;
+        }
+
+
+        /* ================================
+           ROW 02 LEFT
+        ================================= */
+
+        .weekly-section {
+            flex: 2 1 0;
+
+            min-width: 0;
+        }
+
+
+        /* ================================
+           ROW 02 RIGHT
+        ================================= */
+
+        .expense-section {
+            flex: 1 1 0;
+
+            min-width: 0;
+          
+        }
+
+
+        /* Row 02 Heading */
+
+        .row-02-heading {
+            height: 40px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .row-02-heading h3 {
+            margin: 0;
+
+            font-size: 22px;
+            font-weight: 600;
+
+            color: #343f72;
+        }
+
+
+        /* ================================
+           WEEKLY ACTIVITY CARD
+        ================================= */
+
+        .activity-card {
+            position: relative;
+
+            width: 100%;
+            height: 322px;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+
+            padding: 35px 30px 20px 70px;
+        }
+
+
+        /* Legend */
+
+        .activity-legend {
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            margin-right: 28px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+        }
+
+        .legend-item p {
+            margin: 0;
+
+            font-size: 14px;
+
+            color: #6e88bf;
+        }
+
+        .deposit-dot,
+        .withdraw-dot {
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+        }
+
+        .deposit-dot {
+            background: #171be9;
+        }
+
+        .withdraw-dot {
+            background: #19c9c1;
+        }
+
+
+        /* Y Axis */
+
+        .y-axis {
+            position: absolute;
+
+            left: 25px;
+            top: 67px;
+
+            height: 185px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .y-axis span {
+            font-size: 13px;
+
+            color: #6383bf;
+        }
+
+
+        /* Chart */
+
+        .bar-chart {
+            position: relative;
+
+            width: 100%;
+            height: 250px;
+
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        /* Grid lines */
+
+        .grid-lines {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            top: 40px;
+
+            height: 185px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid-lines span {
+            width: 100%;
+            height: 1px;
+
+            background: #edf0f5;
+        }
+
+
+        /* Bar group */
+
+        .bar-group {
+            position: relative;
+
+            width: 50px;
+            height: 250px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            z-index: 2;
+        }
+
+        .bars {
+            position: absolute;
+
+            bottom: 35px;
+
+            display: flex;
+            align-items: flex-end;
+
+            gap: 12px;
+
+            height: 185px;
+        }
+
+
+        /* Bar */
+
+        .bar {
+            display: block;
+
+            width: 15px;
+
+            border-radius: 10px 10px 5px 5px;
+        }
+
+        .bar.deposit {
+            background: #171be9;
+        }
+
+        .bar.withdraw {
+            background: #19c9c1;
+        }
+
+
+        /* Day */
+
+        .bar-group p {
+            position: absolute;
+
+            bottom: 0;
+
+            margin: 0;
+
+            font-size: 13px;
+
+            color: #6383bf;
+        }
+
+
+
+        /* ================================
+           EXPENSE STATISTICS
+        ================================= */
+
+        .expense-card {
+            width: 100%;
+            height: 322px;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* Pie Chart */
+
+        .expense-chart {
+            position: relative;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(#363c73 0deg 105deg,
+
+                    #ffffff 105deg 110deg,
+
+                    #ff7600 110deg 162deg,
+
+                    #ffffff 162deg 167deg,
+
+                    #1919ee 167deg 293deg,
+
+                    #ffffff 293deg 298deg,
+
+                    #f000ed 298deg 360deg);
+        }
+
+
+        /* Pie labels */
+
+        .expense-label {
+            position: absolute;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: #ffffff;
+
+            line-height: 1.2;
+        }
+
+        .expense-label strong {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .expense-label span {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* Entertainment */
+
+        .expense-label.entertainment {
+            top: 55px;
+            left: 58px;
+        }
+
+
+        /* Bill */
+
+        .expense-label.bill {
+            top: 95px;
+            right: 12px;
+        }
+
+
+        /* Others */
+
+        .expense-label.others {
+            bottom: 58px;
+            right: 28px;
+        }
+
+
+        /* Investment */
+
+        .expense-label.investment {
+            bottom: 58px;
+            left: 28px;
+        }
+
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 1200px) {
+
+            .sidebar {
+                width: 220px;
+            }
+
+            .top-navbar {
+                width: calc(100% - 220px);
+            }
+
+            .main-content {
+                width: calc(100% - 220px);
+
+                margin-left: 220px;
+            }
+        }
+
+
+
+        @media (max-width: 1000px) {
+
+            .row-01 {
+                flex-wrap: wrap;
+            }
+
+            .row-01 .card {
+                min-width: calc(50% - 10px);
+            }
+
+            .row-02 {
+                flex-direction: column;
+            }
+
+            .weekly-section,
+            .expense-section {
+                width: 100%;
+            }
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                width: 200px;
+            }
+
+            .top-navbar {
+                width: calc(100% - 200px);
+
+                padding: 0 20px;
+            }
+
+            .main-content {
+                width: calc(100% - 200px);
+
+                margin-left: 200px;
+
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .row-01 {
+                gap: 15px;
+            }
+        }
+
+
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                width: 70px;
+            }
+
+            .sidebar-logo {
+                justify-content: center;
+
+                padding-left: 0;
+            }
+
+            .sidebar-logo span {
+                display: none;
+            }
+
+            .nav-item {
+                justify-content: center;
+
+                padding: 0;
+            }
+
+            .nav-item span {
+                display: none;
+            }
+
+            .nav-item i {
+                width: auto;
+            }
+
+
+            .top-navbar {
+                width: calc(100% - 70px);
+
+                padding: 0 15px;
+            }
+
+            .main-content {
+                width: calc(100% - 70px);
+
+                margin-left: 70px;
+
+                padding: 90px 15px 20px;
+            }
+
+
+            .row-01 {
+                flex-direction: column;
+            }
+
+            .row-01 .card {
+                width: 100%;
+                min-width: 0;
+            }
+
+
+            .row-01-heading {
+                grid-template-columns: 1fr;
+            }
+
+            .row-01-heading .heading-middle,
+            .row-01-heading .heading-last {
+                display: none;
+            }
+
+
+            .row-02 {
+                flex-direction: column;
+            }
+
+
+            .activity-card,
+            .expense-card {
+                height: auto;
+                min-height: 320px;
+            }
+
+
+            .activity-legend {
+                gap: 12px;
+                margin-right: 0;
+            }
+        }
