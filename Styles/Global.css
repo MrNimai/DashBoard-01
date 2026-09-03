@@ -11,3 +11,20 @@
             font-family: Arial, sans-serif;
             background: #f4f7fb;
         }
+
+
+        
+        .main-content {
+            width: calc(100% - 250px);
+
+            min-height: 100vh;
+
+            margin-left: 250px;
+
+            padding: 100px 28px 30px;
+
+            overflow-x: hidden;
+
+            background: #f4f7fb;
+        }
+
