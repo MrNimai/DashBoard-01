@@ -1,0 +1,685 @@
+:root {
+    --text-primary: #1A202C;
+    --text-secondary: #7483A9;
+    --border-color: #E2E8F0;
+    --primary-blue: #1C15F6;
+    --bg-white: #FFFFFF;
+  }
+
+/* =========================
+   ROW 1
+========================= */
+
+.row-1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/* =========================
+   BANK CARD
+========================= */
+
+.bank-card {
+    height: 225px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BLUE CARD
+========================= */
+
+.card-blue {
+    background: linear-gradient(135deg, #3970ff, #3e8bf9);
+    color: #fff;
+}
+
+
+/* =========================
+   PURPLE CARD
+========================= */
+
+.card-purple {
+    background: linear-gradient(135deg, #4940ea, #1716ef);
+    color: #fff;
+}
+
+
+/* =========================
+   WHITE CARD
+========================= */
+
+.card-white {
+    background: #fff;
+    color: #293765;
+    border: 1px solid #dbe1ec;
+}
+
+
+/* =========================
+   CARD TOP
+========================= */
+
+.card-top {
+    height: 90px;
+    padding: 25px 26px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.card-top p {
+    margin: 0 0 2px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.card-blue .card-top p,
+.card-purple .card-top p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.card-white .card-top p {
+    color: #6d86b8;
+}
+
+.card-top h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.card-chip {
+    font-size: 27px;
+    line-height: 1;
+}
+
+.card-blue .card-chip,
+.card-purple .card-chip {
+    color: #fff;
+}
+
+.card-white .card-chip {
+    color: #c6c4cb;
+}
+
+
+/* =========================
+   CARD MIDDLE
+========================= */
+
+.card-middle {
+    display: flex;
+    align-items: flex-start;
+    gap: 75px;
+    padding: 1px 26px 0;
+}
+
+.card-middle p {
+    margin: 0 0 4px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+}
+
+.card-blue .card-middle p,
+.card-purple .card-middle p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.card-white .card-middle p {
+    color: #6680b4;
+}
+
+.card-middle span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.card-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 26px;
+    box-sizing: border-box;
+}
+
+.card-blue .card-bottom {
+    background: rgba(255, 255, 255, 0.11);
+}
+
+.card-purple .card-bottom {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-white .card-bottom {
+    border-top: 1px solid #e4e8ef;
+}
+
+.card-bottom > span {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   MASTERCARD LOGO
+========================= */
+
+.mastercard-logo {
+    width: 47px;
+    height: 30px;
+    position: relative;
+}
+
+.mastercard-logo i {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.card-blue .mastercard-logo i,
+.card-purple .mastercard-logo i {
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.card-white .mastercard-logo i {
+    background: #c8ced9;
+}
+
+.mastercard-logo i:first-child {
+    left: 0;
+}
+
+.mastercard-logo i:last-child {
+    right: 0;
+    opacity: 0.72;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .row-1 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .row-1 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   ROW 2
+========================= */
+
+.row-2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.75fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+
+/* =========================
+   CHART CARD
+========================= */
+
+.chart-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 25px;
+    border: 1px solid #dbe1ec;
+}
+
+.chart-header h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #293765;
+}
+
+
+/* =========================
+   DONUT CHART
+========================= */
+
+.donut-chart {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(
+        #3970ff 0deg 90deg,
+        #ff6b9d 90deg 180deg,
+        #18d2c5 180deg 270deg,
+        #ff9f43 270deg 360deg
+    );
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.donut-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #f8f9fc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-amount {
+    font-size: 18px;
+    font-weight: 600;
+    color: #293765;
+}
+
+
+/* =========================
+   CHART LEGEND
+========================= */
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-item span:last-child {
+    font-size: 13px;
+    color: #6d86b8;
+}
+
+.dbl-bank {
+    background: #3970ff;
+}
+
+.brc-bank {
+    background: #ff6b9d;
+}
+
+.abm-bank {
+    background: #18d2c5;
+}
+
+.mcp-bank {
+    background: #ff9f43;
+}
+
+
+/* =========================
+   SUMMARY CARD
+========================= */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-list-item {
+    width: 100%;
+    min-height: 91px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr 1.15fr 1.05fr 120px;
+    align-items: center;
+    column-gap: 15px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.card-list-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.card-blue-icon {
+    background: #e5ecff;
+    color: #3967ff;
+}
+
+.card-pink-icon {
+    background: #ffe1ee;
+    color: #ff69a5;
+}
+
+.card-yellow-icon {
+    background: #fff2d3;
+    color: #ffae19;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.card-list-column h4 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #26272b;
+}
+
+.card-list-column p {
+    margin: 0;
+    font-size: 15px;
+    color: #6784bd;
+}
+
+
+/* =========================
+   VIEW DETAILS
+========================= */
+
+.view-details {
+    text-decoration: none;
+    font-size: 15px;
+    color: #1717ff;
+    white-space: nowrap;
+    text-align: right;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .card-list-item {
+        grid-template-columns: 60px 1fr 1fr 1fr;
+        row-gap: 12px;
+    }
+
+    .card-list-item .view-details {
+        grid-column: 4;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-list-item {
+        grid-template-columns: 60px 1fr 1fr;
+    }
+
+    .card-list-item .view-details {
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-list-item {
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+    }
+
+    .card-list-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .card-list-column,
+    .card-list-item .view-details {
+        grid-column: 2;
+    }
+
+    .card-list-item .view-details {
+        grid-row: auto;
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   ROW 2 RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*Row 3*/
+
+.row-3{
+    grid-template-columns: 2fr 1fr;
+    
+    display: grid;
+    margin-top: 24px;
+    gap: 24px;
+
+}
+
+.card-container {
+    background-color: var(--bg-white);
+    padding: 32px 40px;
+    border-radius: 12px;
+    max-width: 1050px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .description {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group label {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .input-group input, 
+  .input-group select {
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    outline: none;
+    background-color: transparent;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+
+  .input-group input:focus, 
+  .input-group select:focus {
+    border-color: var(--primary-blue);
+  }
+
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' fill='none' viewBox='0 0 14 8'%3E%3Cpath stroke='%237483A9' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  .btn-submit {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .btn-submit:hover {
+    background-color: #150ece;
+  }
+
+  @media (max-width: 600px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .card-container {
+      padding: 24px;
+    }
+  }
+
+  .settings-list {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    text-align: center;
+  }
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .icon-container svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Specific Icon Colors */
+  .icon-block {
+    background-color: #FEF7E6;
+    color: #F3B755;
+  }
+
+  .icon-pin {
+    background-color: #EEF2FF;
+    color: #5D87F1;
+  }
+
+  .icon-gpay {
+    background-color: #FFEAF1;
+    color: #FA86A3;
+  }
+
+  .icon-apple {
+    background-color: #E2FBF6;
+    color: #2DDFCA;
+  }
+
+  .item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .item-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+  }
