@@ -1,4 +1,5 @@
-ow-1{
+
+.row-1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,4 +18,138 @@ ow-1{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text h2{
+    font-size: 14px;
+}
+
+.text p{
+    font-size: 24px;
+}
+
+.row-2{
+    display: block;
+}
+
+table{
+    border: 1px solid ;
+    justify-content: space-between;
+
+    width: 100% ;
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+}
+
+
+
+
+
+.row-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.row-2-item {
+    width: 100%;
+    height: 90px;
+    padding: 0 30px 0 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.row-2-icon {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe0eb;
+    border-radius: 18px;
+}
+
+.row-2-icon svg {
+    width: 42px;
+    height: 42px;
+    display: block;
+}
+
+.row-2-business {
+    width: 243px;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.row-2-title {
+    color: #171717;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.row-2-subtitle {
+    color: #6c89c4;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 400;
+}
+
+.row-2-info {
+    width: 198px;
+    flex-shrink: 0;
+}
+
+.row-2-info-second {
+    width: 197px;
+}
+
+.row-2-info-third {
+    width: 197px;
+}
+
+.row-2-info-title {
+    color: #171717;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.row-2-info-subtitle {
+    color: #6c89c4;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 400;
+}
+
+.row-2-button {
+    width: 150px;
+    height: 36px;
+    margin-left: auto;
+    flex-shrink: 0;
+
+    border: 1px solid #6b8fd2;
+    border-radius: 20px;
+    background: #ffffff;
+
+    color: #6485c2;
+    font-size: 15px;
+    font-weight: 400;
+
+    cursor: pointer;
 }
