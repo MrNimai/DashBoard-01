@@ -1,0 +1,202 @@
+.row-2 {
+    width: 100%;
+    min-height: 717px;
+    padding: 0 30px 29px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.row-2-form {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 185px minmax(0, 1fr);
+    column-gap: 0;
+
+    padding-top: 54px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.row-2-profile {
+    width: 185px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.row-2-avatar {
+    position: relative;
+    width: 132px;
+    height: 132px;
+}
+
+.row-2-avatar-placeholder {
+    width: 132px;
+    height: 132px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 31%, #f2c4ac 0 18%, transparent 18.5%),
+        radial-gradient(circle at 50% 26%, #2d2525 0 25%, transparent 25.5%),
+        linear-gradient(
+            145deg,
+            #9fb9b8 0%,
+            #78a3a2 48%,
+            #dfe9e8 100%
+        );
+}
+
+.row-2-avatar-placeholder span {
+    margin-bottom: 31px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    opacity: 0.92;
+}
+
+.row-2-edit {
+    position: absolute;
+    right: -3px;
+    bottom: 14px;
+
+    width: 31px;
+    height: 31px;
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    background: #1d19ff;
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.row-2-edit svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================
+   FIELDS
+========================= */
+
+.row-2-fields {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    column-gap: 29px;
+    row-gap: 22px;
+}
+
+.row-2-field {
+    width: 100%;
+    min-width: 0;
+}
+
+.row-2-field label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #282828;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.row-2-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 19px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d7e2f1;
+    border-radius: 15px;
+
+    background: #ffffff;
+    color: #6687c4;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 400;
+
+    outline: none;
+}
+
+.row-2-input:focus {
+    border-color: #1d19ff;
+}
+
+.row-2-input::placeholder {
+    color: #6687c4;
+}
+
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.row-2-save-area {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 30px;
+}
+
+.row-2-save {
+    width: 190px;
+    height: 51px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #1d19ff;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.row-2-save:hover {
+    background: #1511dc;
+}
