@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BankDash Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="Styles/Loans.css">
+    <link rel="stylesheet" href="Styles/Global.css">
+</head>
+
+
+<body>
+    <div id="Sidebar"></div>
+    <div id="Nav"></div>
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+         <div class="row-1">
+               <div class="row-box-1">
+                <img src="Resources/money-icon.png" alt="">
+               <div class="text">
+                <p>Parsonal Loan</p>
+                <h2>$ 12,750</h2>
+               </div>
+            </div>
+            <div class="row-box-2">
+                <img src="Resources/Income-icon.png" alt="">
+               <div class="text">
+                <p>Corporate Loans</p>
+                <h2>$ 5,200</h2>
+               </div>
+            </div>
+            <div class="row-box-3">
+                <img src="Resources/Expense-icon.png" alt="">
+               <div class="text">
+                <p>Business Loans</p>
+                <h2>$ 3,500</h2>
+               </div>
+            </div>
+            <div class="row-box-4">
+                <img src="Resources/Group 401.png" alt="">
+               <div class="text">
+                <p>Custom Loans</p>
+                <h2>$ 9,250</h2>
+               </div>
+            </div>
+        </div> 
+
+         <div class="row-2-header" style="display: flex; align-items: center; gap: 1090px;">
+            <h2>Last Transaction</h2>
+           
+        </div>
+
+        <!-- Row 2 -->
+<div class="row-2">
+    <table class="row-2-table">
+        <thead>
+            <tr>
+                <th>SL No</th>
+                <th>Loan Money</th>
+                <th>Left to repay</th>
+                <th>Duration</th>
+                <th>Interest rate</th>
+                <th>Installment</th>
+                <th>Repay</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>01.</td>
+                <td>$100,000</td>
+                <td>$40,500</td>
+                <td>8 Months</td>
+                <td>12%</td>
+                <td>$2,000 / month</td>
+                <td><button class="repay-btn active">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>02.</td>
+                <td>$500,000</td>
+                <td>$250,000</td>
+                <td>36 Months</td>
+                <td>10%</td>
+                <td>$8,000 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>03.</td>
+                <td>$900,000</td>
+                <td>$40,500</td>
+                <td>12 Months</td>
+                <td>12%</td>
+                <td>$5,000 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>04.</td>
+                <td>$50,000</td>
+                <td>$40,500</td>
+                <td>25 Months</td>
+                <td>5%</td>
+                <td>$2,000 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>05.</td>
+                <td>$50,000</td>
+                <td>$40,500</td>
+                <td>5 Months</td>
+                <td>16%</td>
+                <td>$10,000 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>06.</td>
+                <td>$80,000</td>
+                <td>$25,500</td>
+                <td>14 Months</td>
+                <td>8%</td>
+                <td>$2,000 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>07.</td>
+                <td>$12,000</td>
+                <td>$5,500</td>
+                <td>9 Months</td>
+                <td>13%</td>
+                <td>$500 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr>
+                <td>08.</td>
+                <td>$160,000</td>
+                <td>$100,800</td>
+                <td>3 Months</td>
+                <td>12%</td>
+                <td>$900 / month</td>
+                <td><button class="repay-btn">Repay</button></td>
+            </tr>
+
+            <tr class="total-row">
+                <td>Total</td>
+                <td>$125,0000</td>
+                <td>$750,000</td>
+                <td></td>
+                <td></td>
+                <td>$50,000 / month</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    </main>
+
+
+   
+
+
+
+    <!-- =================================================
+         FONT AWESOME
+    ================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="JS/Components.js"></script>
+
+
+</body>
+
+</html>
